@@ -6,7 +6,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-public class WebDriverProvider {
+public class WebDriver {
     public static WebConfig config = ConfigFactory.create(WebConfig.class);
     public static void configure() {
         Configuration.baseUrl = config.baseUrl();
