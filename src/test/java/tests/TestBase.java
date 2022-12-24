@@ -1,7 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import drivers.WebDriverProvider;
+import drivers.WebDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 
@@ -12,12 +12,10 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-    static String useRemote = System.getProperty("webPlatform", "remote");
-
 
     @BeforeAll
     static void setUp() {
-        WebDriverProvider.configure();
+        WebDriver.configure();
     }
 
     @BeforeEach
