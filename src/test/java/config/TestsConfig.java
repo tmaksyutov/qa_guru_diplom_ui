@@ -12,7 +12,7 @@ public interface TestsConfig extends Config {
     @DefaultValue("CHROME")
     String browser();
 
-    @DefaultValue("99.0")
+    @DefaultValue("106")
     String version();
 
     @DefaultValue("https://ufa.hh.ru")
