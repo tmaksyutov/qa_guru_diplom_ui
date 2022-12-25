@@ -21,6 +21,6 @@ public class TestData {
             expectedTitle = "Вход в личный кабинет",
             consoleLogs = DriverUtils.getConsoleLogs(),
             errorText = "SEVERE",
-            loginMassage = "Пожалуйста, подтвердите, что вы не робот";
+            loginMassage = "Неправильные данные для входа. Пожалуйста, попробуйте снова.";
 
 }
