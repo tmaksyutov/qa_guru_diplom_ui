@@ -30,6 +30,10 @@ public interface WebConfig extends Config {
 
     String selenoidPassword();
 
+    String hhruEmail();
+
+    String hhruPassword();
+
 }
 
 
