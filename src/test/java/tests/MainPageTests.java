@@ -12,7 +12,7 @@ public class MainPageTests extends TestBase {
         step("Открыть страницу", () ->
                 mainPage.openMainPage());
 
-        step("Проверка логов в консоли с значением 'SEVERE'", () ->
+        step("Проверка ошибок в Console с значением 'SEVERE'", () ->
                 mainPage.checkConsoleLogs());
     }
 
