@@ -18,8 +18,7 @@ public class LoginPage {
             loginByPasswordButton = $(byTestId("expand-login-by-password")),
             userNameInput = $(byTestId("login-input-username")),
             passwordInput = $(byTestId("login-input-password")),
-            validationMassage = $(byTestId("account-login-error")),
-            applicantProfileButton = $(byTestId("mainmenu_applicantProfile"));
+            submitButton = $(byTestId("account-login-submit"));
 
 
     public LoginPage openLoginPage() {
@@ -41,7 +40,7 @@ public class LoginPage {
     }
 
     public LoginPage setPassword() {
-        passwordInput.setValue(password).pressEnter();
+        passwordInput.setValue(password);
 
         return this;
     }
@@ -58,13 +57,14 @@ public class LoginPage {
         return this;
     }
 
-    public LoginPage setApplicantProfileButton() {
-        applicantProfileButton.click();
+    public LoginPage setLoginButton() {
+        submitButton.click();
+
 
         return this;
     }
 
-    public LoginPage checkApplicantProfileMenuVisible() {
+    public LoginPage checkMyResumesMenuVisible() {
         profileMenuComponent.checkVisible();
 
         return this;
