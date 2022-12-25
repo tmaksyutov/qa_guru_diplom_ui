@@ -6,7 +6,7 @@ import static helpers.DriverHelper.byTestId;
 
 public class ProfileMenuComponent {
     public ProfileMenuComponent checkVisible() {
-        $(byTestId("mainmenu_applicantInfo")).shouldBe(visible);
+        $(byTestId("mainmenu_myResumes")).shouldBe(visible);
 
         return this;
     }
