@@ -33,6 +33,7 @@ public class MainPage {
     }
 
     public MainPage checkTitleHeader() {
+        String actualTitle = title();
         assertThat(actualTitle).isEqualTo(expectedTitle);
 
         return this;
