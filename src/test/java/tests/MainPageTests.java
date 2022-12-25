@@ -22,7 +22,7 @@ public class MainPageTests extends TestBase {
         step("Открыть страницу'", () ->
                 mainPage.openMainPage());
 
-        step("Название главной страницы 'Работа в Уфе, поиск персонала и публикация вакансий - ufa.hh.ru'", () ->
+        step("Проверка названия главной страницы", () ->
                 mainPage.checkTitleHeader());
     }
 
