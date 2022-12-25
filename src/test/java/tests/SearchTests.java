@@ -1,68 +1,61 @@
 package tests;
 
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static helpers.DriverHelper.byTestId;
 import static io.qameta.allure.Allure.step;
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchTests extends TestBase {
 
     @Test
-    @DisplayName("Поиск работы")
-    void jobSearchTest() {
+    @DisplayName("Выбор страны поиска вакансий")
+    void selectCountryJobSearchTest() {
         step("Open page", () ->
+                open("https://ufa.hh.ru")
+        );
+        step("Перейти на страницу выбора региона", () ->
+                $(byTestId("mainmenu_areaSwitcher")).click()
+        );
+        step("Выбор страны поиска", () ->
+                $$(byTestId("area-switcher-title")).findBy(text("Россия")).click()
+        );
+        step("Проверка выбора региона", () ->
+                $(byTestId("mainmenu_areaSwitcher")).shouldHave(text("Россия"))
+        );
+
+    }
+
+    @Test
+    @DisplayName("Поиск вакансий QA инженером")
+    void jobSearchTest() {
+        step("Открыть страницу", () ->
                 open("https://ufa.hh.ru"));
 
-        step("Set value", () ->
-                $("#a11y-search-input").setValue("QA").pressEnter());
+        step("Ввести в поиск название вакансии", () ->
+                $(byTestId("search-input")).setValue("QA").pressEnter());
 
-        step("Check vacancy", () ->
-                $("#a11y-main-content").shouldHave(text("QA")));
+        step("Проверить вакансии по заданному названию", () ->
+                $(byTestId("serp-item__title")).shouldHave(text("QA")));
     }
 
     @Test
-    @DisplayName("Отображение сервисов для соискателей")
-    void servicesShouldBeVisibleTest() {
-        step("Открыть 'https://ufa.hh.ru/'", () ->
-                open("https://ufa.hh.ru/"));
+    @DisplayName("Проверка списка стран и городов")
+    void countriesAndCitiesShouldBeVisibleTest() {
+        step("Открыть старницу", () ->
+                open("https://ufa.hh.ru")
+        );
 
-        step("Перейти в раздел 'Все сервисы'", () ->
-                $(".supernova-overlay").$(byText("Все сервисы")).click());
+        step("Перейти на страницу выбора стран и городов", () ->
+                $(byTestId("mainmenu_areaSwitcher")).click()
+        );
 
-        step("Проверка отображения блока 'Сервисы для соискателей'", () -> {
-            $(".bloko-header-1").shouldBe(visible);
-        });
-    }
-
-    @Test
-    @DisplayName("Отображение дашборда")
-    void dashboardShouldBeVisibleTest() {
-        step("Открыть 'https://ufa.hh.ru/'", () ->
-                open("https://ufa.hh.ru/"));
-
-        step("Проверка отображения дашбоода", () -> {
-            $(".dashboard-tiles-wrapper").shouldBe(visible);
-        });
-    }
-
-    @Test
-    @DisplayName("Проверка наличия главной страницы")
-    void titleTest() {
-        step("Открыть 'https://ufa.hh.ru/'", () ->
-                open("https://ufa.hh.ru/"));
-
-        step("Заголовок страницы имеет текст 'Работа в Уфе, поиск персонала и публикация вакансий - ufa.hh.ru'", () -> {
-            String expectedTitle = "Работа в Уфе, поиск персонала и публикация вакансий - ufa.hh.ru";
-            String actualTitle = title();
-
-            assertThat(actualTitle).isEqualTo(expectedTitle);
-        });
+        step("Проверить отображение списка стран и городов", () ->
+                $(byTestId("area-switcher-welcome")).shouldBe(visible)
+        );
     }
 
 }
