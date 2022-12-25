@@ -3,7 +3,6 @@ package tests;
 import drivers.WebDriver;
 import drivers.DriverUtils;
 
-import static com.codeborne.selenide.Selenide.title;
 
 public class TestData {
 
@@ -17,7 +16,6 @@ public class TestData {
             country = "Россия",
             vacancy = "QA",
             expectedTitle = "Работа в Уфе, поиск персонала и публикация вакансий - ufa.hh.ru",
-            actualTitle = title(),
             consoleLogs = DriverUtils.getConsoleLogs(),
             errorText = "SEVERE",
             loginMassage = "Неправильные данные для входа. Пожалуйста, попробуйте снова.";
