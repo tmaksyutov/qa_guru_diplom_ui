@@ -28,7 +28,7 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Невалидные данные при авторизации с помощью пароля")
+    @DisplayName("Проверка валидационного сообщения при авторизации")
     void invalidLoginDataWithPasswordTest() {
         step("Открыть страницу авторизации", () ->
                 loginPage.openLoginPage());
