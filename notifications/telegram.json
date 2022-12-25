@@ -1,8 +1,8 @@
 {
   "base": {
-    "project": "",
+    "project": "some project",
     "environment": "qa.guru",
-    "comment": "some comment ",
+    "comment": "some comment",
     "reportLink": "",
     "language": "ru",
     "allureFolder": "allure-report/",
