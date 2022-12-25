@@ -21,9 +21,11 @@ public class LoginTests extends TestBase {
                 loginPage.setEmail()
                         .setPassword());
 
-        step("Проверить отображение меню пользователя", () ->
-                loginPage.setApplicantProfileButton()
-                        .checkApplicantProfileMenuVisible());
+        step("Нажать на кнопку'Войти'", () ->
+                loginPage.setLoginButton());
+
+        step("Проверка отображения вкладки 'Мои резюме'", () ->
+                loginPage.checkMyResumesMenuVisible());
 
     }
 
