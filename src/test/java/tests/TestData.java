@@ -18,7 +18,7 @@ public class TestData {
             country = "Россия",
             vacancy = "QA",
             actualTitle = title(),
-            expectedTitle = "Работа в Уфе, поиск персонала и публикация вакансий - ufa.hh.ru",
+            expectedTitle = "Вход в личный кабинет",
             consoleLogs = DriverUtils.getConsoleLogs(),
             errorText = "SEVERE",
             loginMassage = "Неправильные данные для входа. Пожалуйста, попробуйте снова.";
