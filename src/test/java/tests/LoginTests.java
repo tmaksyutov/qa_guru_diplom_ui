@@ -1,13 +1,17 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
+
 import static io.qameta.allure.Allure.step;
+import static tests.testData.TestData.*;
+import static tests.testData.UserData.*;
 
 public class LoginTests extends TestBase {
-
+    @Owner("Тимур Максютов")
     @Test
     @DisplayName("Успешная авторизация с помощью пароля")
     void successLoginWithPasswordTest() {
@@ -18,8 +22,8 @@ public class LoginTests extends TestBase {
                 loginPage.selectLoginWithPassword());
 
         step("Ввести логин и пароль", () ->
-                loginPage.setEmail()
-                        .setPassword());
+                loginPage.setEmail(email)
+                        .setPassword(password));
 
         step("Нажать на кнопку'Войти'", () ->
                 loginPage.setLoginButton());
@@ -29,8 +33,9 @@ public class LoginTests extends TestBase {
 
     }
 
+    @Owner("Тимур Максютов")
     @Test
-    @DisplayName("Проверка валидационного сообщения при авторизации")
+    @DisplayName("Проверка сообщения об ошибке при авторизации c невалидными данными")
     void invalidLoginDataWithPasswordTest() {
         step("Открыть страницу авторизации", () ->
                 loginPage.openLoginPage());
@@ -39,8 +44,8 @@ public class LoginTests extends TestBase {
                 loginPage.selectLoginWithPassword());
 
         step("Ввести невалидный логин и пароль", () ->
-                loginPage.setInvalidEmail()
-                        .setInvalidPassword());
+                loginPage.setInvalidEmail(invalidEmail)
+                        .setInvalidPassword(invalidPassword));
 
         step("Проверить валидационное сообщение", () ->
                 loginPage.checkLoginValidationMassage());

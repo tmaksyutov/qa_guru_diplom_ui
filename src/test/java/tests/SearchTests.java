@@ -1,30 +1,29 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
-
+    @Owner("Тимур Максютов")
     @Test
     @DisplayName("Выбор страны поиска вакансий")
     void selectCountryJobSearchTest() {
         step("Открыть главную страницу", () ->
                 mainPage.openMainPage());
 
-        step("Перейти на страницу выбора стран и городов", () ->
-                mainPage.areaButton.click()
-        );
-        step("Выбор страны поиска", () ->
-                mainPage.areaTitle.click()
-        );
+        step("Выбрать страну поиска", () ->
+                mainPage.goCountriesAndCitiesPage()
+                        .selectSearchCountry());
+
         step("Проверка выбранной страны поиска", () ->
                 mainPage.checkJobSearchCountry()
         );
 
     }
-
+    @Owner("Тимур Максютов")
     @Test
     @DisplayName("Поиск вакансий")
     void jobSearchTest() {
@@ -37,7 +36,7 @@ public class SearchTests extends TestBase {
         step("Проверить вакансии по заданному названию", () ->
                 mainPage.checkJobTitle());
     }
-
+    @Owner("Тимур Максютов")
     @Test
     @DisplayName("Проверка списка стран и городов")
     void countriesAndCitiesShouldBeVisibleTest() {
@@ -45,8 +44,7 @@ public class SearchTests extends TestBase {
                 mainPage.openMainPage());
 
         step("Перейти на страницу выбора стран и городов", () ->
-                mainPage.areaButton.click()
-        );
+                mainPage.goCountriesAndCitiesPage());
 
         step("Проверить отображение списка стран и городов", () ->
                 mainPage.checkListCountiesAndCitiesVisible());
