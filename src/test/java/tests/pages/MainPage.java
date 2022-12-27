@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.DriverHelper.byTestId;
 import static org.assertj.core.api.Assertions.assertThat;
-import static tests.TestData.*;
+import static tests.testData.TestData.*;
 
 public class MainPage {
 
@@ -32,7 +32,7 @@ public class MainPage {
         return this;
     }
 
-    public MainPage checkTitleHeader() {
+    public MainPage checkTitle() {
         assertThat(actualTitle).isEqualTo(expectedTitle);
 
         return this;
@@ -62,4 +62,17 @@ public class MainPage {
 
         return this;
     }
+
+    public MainPage selectSearchCountry() {
+        areaTitle.click();
+
+        return this;
+    }
+
+    public MainPage goCountriesAndCitiesPage() {
+        areaButton.click();
+
+        return this;
+    }
+
 }

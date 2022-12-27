@@ -7,7 +7,7 @@ import tests.pages.components.ValidationMassageComponent;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static helpers.DriverHelper.byTestId;
-import static tests.TestData.*;
+import static tests.testData.TestData.*;
 
 public class LoginPage {
 
@@ -33,25 +33,25 @@ public class LoginPage {
         return this;
     }
 
-    public LoginPage setEmail() {
+    public LoginPage setEmail(String email) {
         userNameInput.setValue(email);
 
         return this;
     }
 
-    public LoginPage setPassword() {
+    public LoginPage setPassword(String password) {
         passwordInput.setValue(password);
 
         return this;
     }
 
-    public LoginPage setInvalidEmail() {
+    public LoginPage setInvalidEmail(String invalidEmail) {
         userNameInput.setValue(invalidEmail);
 
         return this;
     }
 
-    public LoginPage setInvalidPassword() {
+    public LoginPage setInvalidPassword(String invalidPassword) {
         passwordInput.setValue(invalidPassword).pressEnter();
 
         return this;
