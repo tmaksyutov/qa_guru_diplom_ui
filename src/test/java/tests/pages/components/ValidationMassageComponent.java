@@ -3,7 +3,7 @@ package tests.pages.components;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static helpers.DriverHelper.byTestId;
-import static tests.TestData.loginMassage;
+import static tests.testData.TestData.*;
 
 
 public class ValidationMassageComponent {
