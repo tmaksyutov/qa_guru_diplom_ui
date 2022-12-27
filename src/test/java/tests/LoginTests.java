@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 
 
 import static io.qameta.allure.Allure.step;
-import static tests.testData.TestData.*;
-import static tests.testData.UserData.*;
+import static tests.data.TestData.*;
+import static tests.data.UserData.*;
 
 public class LoginTests extends TestBase {
     @Owner("Тимур Максютов")

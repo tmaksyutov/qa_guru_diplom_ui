@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.DriverHelper.byTestId;
 import static org.assertj.core.api.Assertions.assertThat;
-import static tests.testData.TestData.*;
+import static tests.data.TestData.*;
 
 public class MainPage {
 

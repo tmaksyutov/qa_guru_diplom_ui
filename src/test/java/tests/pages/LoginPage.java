@@ -7,7 +7,7 @@ import tests.pages.components.ValidationMassageComponent;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static helpers.DriverHelper.byTestId;
-import static tests.testData.TestData.*;
+import static tests.data.TestData.*;
 
 public class LoginPage {
 
