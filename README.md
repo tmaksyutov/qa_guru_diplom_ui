@@ -56,6 +56,7 @@ gradle clean test
 
 ```bash
 gradle clean test
+
 -Dremote=${SELENOID_URL}
 -Dbrowser=${BROWSER}
 -DbrowserSize=${BROWSER_SIZE}
