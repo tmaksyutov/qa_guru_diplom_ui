@@ -102,19 +102,19 @@ gradle clean test
 
 ## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/17965)
 
-## Основной дашборд
+### Основной дашборд
 
 <p align="center">
   <img src="images/dashboard.png" alt="dashboard" width="900">
 </p>
 
-## Список тестов с результатами прогона
+### Список тестов с результатами прогона
 
 <p align="center">
   <img src="images/three.png" alt="dashboard" width="900">
 </p>
  
-## Тест-кейсы 
+### Тест-кейсы 
 
 <p align="center">
   <img src="images/testcase.png" alt="testcase" width="900">
