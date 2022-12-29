@@ -35,10 +35,14 @@
 ## :bookmark_tabs: Реализованные проверки:
 ### UI Tests
 
-- Проверка результатов поиска работы 
-- Проверка отображаения блока сервисов для соискателей 
-- Проверка отображения дашборда с вакансиями
-- Проверка отображения главной страницы 
+- Успешная авторизация с помощью пароля
+- Проверка сообщения об ошибке при авторизации c невалидными данными 
+- Проверка названия главной страницы 
+- Проверка ошибок в Console 
+- Выбор страны поиска вакансий 
+- Проверка списка стран и городов 
+- Поиск вакансий
+
 
 ## :computer: Запуск тестов из терминала
 
@@ -52,26 +56,26 @@ gradle clean test
 
 ```bash
 gradle clean test
--Dbrowser=${browser}
--DbrowserVersion=${browserVersion}
--DbrowserSize=${browserSize}
--DremoteUrl=${remoteUrl}
--Dthreads=${THREADS}
+-Dremote=${SELENOID_URL}
+-Dbrowser=${BROWSER}
+-DbrowserSize=${BROWSER_SIZE}
+-DbrowserVersion=${BROWSER_VERSION}
 ```
 
 ## Параметры сборки
 
- <code>browser</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
+ <code>remote</code> – логин, пароль и адрес удаленного сервера Selenoid (_по умолчанию указаны в сборке Jenkins_).
 
- <code>browserVersion</code> – версия браузера (_по умолчанию - <code>100</code>_).
+ <code>browser</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
 
  <code>browserSize</code> – размер окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1920x1080</code>_).
 
- <code>remoteUrl</code> – логин, пароль и адрес удаленного сервера Selenoid (_по умолчанию указаны в сборке Jenkins_).
+ <code>browserVersion</code> – версия браузера (_по умолчанию - <code>106</code>_).
 
- <code>THREADS</code> - параллельный запуск тестов (_по умолчанию - <code>5</code>_).
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins_logo.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/hhru_15/)
+
+
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins_logo.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/tmaksyutov_diplom_ui/)
 
 Для запуска сборки необходимо указать значения параметров и нажать кнопку <code><strong>*Собрать*</strong></code>.
 
@@ -87,7 +91,7 @@ gradle clean test
 </p>
 
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/hhru_15/32/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/tmaksyutov_diplom_ui/33/allure/)
 
 <p align="center">
   <img src="images/allure-report1.png" alt="allure-report1" width="900">
@@ -95,12 +99,18 @@ gradle clean test
 
 
 
-## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/16913)
+## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/17965)
 
 ## Основной дашборд
 
 <p align="center">
   <img src="images/dashboard.png" alt="dashboard" width="900">
+</p>
+
+## Список тестов с результатами прогона
+
+<p align="center">
+  <img src="images/three.png" alt="dashboard" width="900">
 </p>
  
 ## Тест-кейсы 
@@ -109,7 +119,7 @@ gradle clean test
   <img src="images/testcase.png" alt="testcase" width="900">
 </p>
 
-## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-426)
+## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-483)
 
 <p align="center">
   <img src="images/jira.png" alt="jira" width="900">
@@ -126,6 +136,10 @@ gradle clean test
 
 К каждому тесту в отчете прилагается видео.
 
+На данном видео выполняется:
+Проверка сообщения об ошибке при авторизации c невалидными данными
+
+
 <p align="center">
-  <img title="Selenoid Video" src="images/gif/test.gif">
+  <img title="Selenoid Video" src="images/gif/test1.gif">
 </p>
