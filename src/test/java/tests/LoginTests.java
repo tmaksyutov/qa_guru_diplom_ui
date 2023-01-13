@@ -10,6 +10,7 @@ import static tests.data.TestData.*;
 import static tests.data.UserData.*;
 
 public class LoginTests extends TestBase {
+
     @Owner("Тимур Максютов")
     @Test
     @DisplayName("Успешная авторизация с помощью пароля")
