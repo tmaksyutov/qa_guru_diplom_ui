@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
+
     @Owner("Тимур Максютов")
     @Test
     @DisplayName("Выбор страны поиска вакансий")
@@ -21,8 +22,8 @@ public class SearchTests extends TestBase {
         step("Проверка выбранной страны поиска", () ->
                 mainPage.checkJobSearchCountry()
         );
-
     }
+
     @Owner("Тимур Максютов")
     @Test
     @DisplayName("Поиск вакансий")
@@ -36,6 +37,7 @@ public class SearchTests extends TestBase {
         step("Проверить вакансии по заданному названию", () ->
                 mainPage.checkJobTitle());
     }
+
     @Owner("Тимур Максютов")
     @Test
     @DisplayName("Проверка списка стран и городов")
