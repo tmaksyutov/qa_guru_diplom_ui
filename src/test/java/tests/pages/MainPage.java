@@ -18,7 +18,6 @@ public class MainPage {
             itemTitle = $(byTestId("serp-item__title")),
             areaList = $(byTestId("area-switcher-welcome"));
 
-
     public MainPage openMainPage() {
         open(baseUrl);
 

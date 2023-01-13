@@ -20,7 +20,6 @@ public class LoginPage {
             passwordInput = $(byTestId("login-input-password")),
             submitButton = $(byTestId("account-login-submit"));
 
-
     public LoginPage openLoginPage() {
         open(loginUrl);
 
