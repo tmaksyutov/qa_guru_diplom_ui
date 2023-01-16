@@ -23,7 +23,6 @@ public interface WebConfig extends Config {
     String browserVersion();
 
     @Key("remote")
-    @DefaultValue("false")
     String remote();
 
     String selenoidLogin();
